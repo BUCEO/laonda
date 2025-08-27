@@ -6,14 +6,14 @@ CREATE TABLE IF NOT EXISTS omnibus (
             estado ENUM('activo', 'vintage', 'baja') DEFAULT 'vintage'
 );
 -- Tabla agencia
-CREATE TABLE agencia (
+CREATE TABLE IF NOT EXISTS agencia (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     ciudad VARCHAR(50) NOT NULL
 );
 
 -- Tabla trayecto (con claves foráneas)
-CREATE TABLE trayecto (
+CREATE TABLE IF NOT EXISTS trayecto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     origen VARCHAR(50) NOT NULL,
     destino VARCHAR(50) NOT NULL,
