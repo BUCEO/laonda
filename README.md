@@ -21,7 +21,6 @@ Proyecto web interactivo que recrea los viajes en ómnibus de las décadas de 19
 │
 ├── index.php                # Página principal (mapa interactivo)
 ├── trayecto.php             # Detalle de trayectos
-├── reserva.php              # Sistema de reservas (si aplica)
 ├── admin/                   # Panel de gestión (opcional)
 │   ├── agencias.php
 │   └── omnibus.php
