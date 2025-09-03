@@ -15,6 +15,7 @@ try {
     $conn = new PDO("mysql:host=$host", $user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->exec("CREATE DATABASE IF NOT EXISTS $dbname");
+    $conn->exec("CREATE USER IF NOT EXISTS $dbname");
     $conn->exec("GRANT ALL PRIVILEGES ON $dbname.* TO '$user'@'$host'");
     echo "✅ Base de datos creada\n";
 } catch (PDOException $e) {
