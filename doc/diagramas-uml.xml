@@ -1,0 +1,114 @@
+<mxfile host="Electron" modified="2025-09-11T22:16:17.286Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" version="22.0.3" etag="533X1Hb9qorw9-8KfM8o" type="device">
+  <diagram id="UY3Qw-zXvA0O9nVWgfW-" name="Diagrama de Clases ONDA Vintage">
+    <mxGraphModel dx="1845" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="BaseEntity&#xa;+ id: int&#xa;&#xa;+ getId(): int&#xa;# validateInt(value: int, field: string): void&#xa;# validateString(value: string, maxLength: int): void" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry y="70" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Agencia&#xa;- ubicacion: string&#xa;- nombre: string&#xa;- linkAFotoAgencia: string&#xa;&#xa;+ setUbicacion(ubicacion: string): void&#xa;+ getNombre(): string&#xa;+ setNombre(nombre: string): void&#xa;+ getLinkAFotoAgencia(): string&#xa;+ setLinkAFotoAgencia(link: string): void" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="30" width="270" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Omnibus&#xa;&#xa;- numero: int&#xa;- apodo: string&#xa;- modelo: string&#xa;- anioInicio: date&#xa;- anioFin: date&#xa;- linkAFotoOmnibus: string&#xa;&#xa;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="-150" y="340" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Trayecto&#xa;- descripcion: string&#xa;- inicio: date&#xa;- fin: date&#xa;- origen: Agencia&#xa;- destino: Agencia&#xa;- omnibusAsignados: Omnibus[]&#xa;&#xa;+ getDescripcion(): string&#xa;+ setDescripcion(descripcion: string): void&#xa;+ getInicio(): date&#xa;+ setInicio(inicio: date): void&#xa;+ getFin(): date&#xa;+ setFin(fin: date): void&#xa;+ getOrigen(): Agencia&#xa;+ setOrigen(origen: Agencia): void&#xa;+ getDestino(): Agencia&#xa;+ setDestino(destino: Agencia): void&#xa;+ getOmnibusAsignados(): Omnibus[]&#xa;+ addOmnibus(omnibus: Omnibus): void&#xa;+ removeOmnibus(omnibus: Omnibus): void" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="350" width="220" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="3" target="2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="490" y="120" as="sourcePoint" />
+            <mxPoint x="590" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="4" target="2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="210" y="350" as="sourcePoint" />
+            <mxPoint x="310" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5" target="2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="510" y="350" as="sourcePoint" />
+            <mxPoint x="610" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6" target="2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="230" y="650" as="sourcePoint" />
+            <mxPoint x="330" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="1" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5" target="3" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="500" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="1" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" target="dJYD12c6TBOvCsqk8uUt-17" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="500" y="400" as="sourcePoint" />
+            <mxPoint x="600" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="*" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5" target="4" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="510" y="450" as="sourcePoint" />
+            <mxPoint x="410" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="1" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.322;entryY=1.067;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="dJYD12c6TBOvCsqk8uUt-17" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="230" y="700" as="sourcePoint" />
+            <mxPoint x="430" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="1" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6" target="4" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="230" y="750" as="sourcePoint" />
+            <mxPoint x="230" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="1" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6" target="5" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="230" y="800" as="sourcePoint" />
+            <mxPoint x="430" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-17" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="210" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-20" value="+ getUbicacion(): string" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="550" y="210" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-26" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="120" y="650" width="290" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-28" value="" style="group" vertex="1" connectable="0" parent="dJYD12c6TBOvCsqk8uUt-26">
+          <mxGeometry width="290" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-29" value="" style="group" vertex="1" connectable="0" parent="dJYD12c6TBOvCsqk8uUt-28">
+          <mxGeometry width="290" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-22" value="" style="swimlane;startSize=0;" vertex="1" parent="dJYD12c6TBOvCsqk8uUt-29">
+          <mxGeometry y="130" width="290" height="220" as="geometry">
+            <mxRectangle y="130" width="240" height="210" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-23" value="+ getTitulo(): string&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setTitulo(titulo: string): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getFecha(): date&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setFecha(fecha: date): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getUrlHistoria(): string&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setUrlHistoria(url: string): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getUrlFotos(): string&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setUrlFotos(url: string): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getTrayecto(): Trayecto&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setTrayecto(trayecto: Trayecto): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getAgencia(): Agencia&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setAgencia(agencia: Agencia): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getOmnibus(): Omnibus&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setOmnibus(omnibus: Omnibus): void&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="dJYD12c6TBOvCsqk8uUt-22">
+          <mxGeometry x="-10" y="95" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Historia&#xa;- titulo: string&#xa;- fecha: date&#xa;- urlHistoria: string&#xa;- urlFotos: string&#xa;- trayecto: Trayecto&#xa;- agencia: Agencia&#xa;- omnibus: Omnibus&#xa;&#xa;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="dJYD12c6TBOvCsqk8uUt-29" vertex="1">
+          <mxGeometry width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-30" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="460" width="250" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dJYD12c6TBOvCsqk8uUt-31" value="+ getNumero(): int&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setNumero(numero: int): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getApodo(): string&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setApodo(apodo: string): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getModelo(): string&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setModelo(modelo: string): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getAnioInicio(): date&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setAnioInicio(anio: date): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getAnioFin(): date&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setAnioFin(anio: date): void&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ getLinkAFotoOmnibus(): string&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; font-weight: 700;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;+ setLinkAFotoOmnibus(link: string): void&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="dJYD12c6TBOvCsqk8uUt-30">
+          <mxGeometry y="10" width="260" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
